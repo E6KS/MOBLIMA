@@ -49,8 +49,7 @@ public class TicketPriceView {
                 } else if (opt == 5) {
                     publicHolidaySettings();
                 } else if (opt == 6) {
-                    saveMenu();
-                }else if (opt == 7){
+                    commit();
                     return;
                 }else {
                     System.out.println("\n[System: Invalid Input]");
@@ -58,22 +57,6 @@ public class TicketPriceView {
             }catch (Exception e){
                 System.out.println("\n[System: Invalid Input]");
             }
-        }
-    }
-
-    public static void saveMenu(){
-        /**This method is a menu to let the admin confirm if they want to make the changes
-         * return if the admin input "N"
-         */
-        System.out.print("Confirm Changes? (Y/N): ");
-        Scanner in = new Scanner(System.in);
-        String opt = in.next();
-        if (opt.toUpperCase().equals("Y")){
-            commit();
-        } else if (opt.toUpperCase().equals("N")){
-            return;
-        }else {
-            System.out.println("[System: Invalid Input]");
         }
     }
 
