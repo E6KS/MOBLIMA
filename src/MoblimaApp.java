@@ -1,4 +1,5 @@
 import controller.DBController;
+import controller.SerializedDB;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -10,17 +11,21 @@ import static view.TicketPriceView.ticketPriceView;
 public class MoblimaApp {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void run(){
-        int choice = 0;
-        boolean stillRunning = true;
+    public static void run() {
         DBController dbController = DBController.getInstance();
         try {
             dbController.load();
-        }catch(IOException e){
-
-        }catch(ParseException e){
-            System.out.println("[System: Error in parsing database]");
+        }catch(Exception e) {
+            runApp();
+            return;
         }
+        runApp();
+    }
+
+    public static void runApp(){
+        int choice = 0;
+        boolean stillRunning = true;
+        DBController dbController = DBController.getInstance();
         while (stillRunning) {
             System.out.println("Welcome to MOvie Booking and LIsting Management Application (MOBLIMA)\n");
             System.out.println("Enter your options: ");
