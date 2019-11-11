@@ -2,6 +2,7 @@ package controller;
 
 import model.AgeGroup;
 import model.PublicHoliday;
+import model.account.Admin;
 import model.cinema.Cinema;
 import model.cinema.CinemaType;
 import model.cinema.Cineplex;

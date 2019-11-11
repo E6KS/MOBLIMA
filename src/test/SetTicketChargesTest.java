@@ -5,6 +5,7 @@ import controller.DBController;
 import java.io.IOException;
 import java.text.ParseException;
 
+import static service.TicketPriceService.setAllPrices;
 import static view.TicketPriceView.ticketPriceView;
 
 public class SetTicketChargesTest {
@@ -17,6 +18,7 @@ public class SetTicketChargesTest {
         try {
             DBService.loadTicketPriceInfoDatabase();
         }catch(Exception e){
+            setAllPrices();
             ticketPriceView();
             DBService.saveTicketPriceInfoDatabase();
             return;

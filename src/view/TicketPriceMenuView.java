@@ -25,8 +25,8 @@ public class TicketPriceMenuView {
 
 
         System.out.print("========================================================\n" +
-                "|                 Public Holiday Dates                 |\n" +
-                "========================================================\n");
+                        "|                 Public Holiday Dates                 |\n" +
+                        "========================================================\n");
 
         if (getPublicHolidayDates().size()== 0){
             System.out.print("| There is no public holidays currently...             |\n");
@@ -155,13 +155,15 @@ public class TicketPriceMenuView {
                             "| %-55s |\n" +
                             "| %-55s |\n" +
                             "| %-55s |\n" +
+                            "| %-55s |\n" +
                             "===========================================================\n",
                             "(1) Set Base Price (Current Price: SGD " + String.format("%.2f", getBasePrice()) + ")",
                             "(2) Movie Type Charges",
                             "(3) Cinema Type Charges",
                             "(4) Special Citizen Discount" ,
                             "(5) Public Holiday/ Weekend Settings",
-                            "(6) Back"
+                            "(6) Save",
+                            "(7) Back"
                             );
     }
 
